@@ -1,0 +1,10 @@
+docker run \
+--name tommydev \
+-v /opt/test/agentconf.yml:/usr/local/tomcat/agentconf.yml \
+-v /opt/test/agent.jar:/usr/local/tomcat/agent.jar \
+-e AGENTCONF=/usr/local/tomcat/agentconf.yml \
+-e AGENT=/usr/local/tomcat/agent.jar \
+-e CATALINA_OPTS="-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9999 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false" \
+-p 19998:9998 \
+-p 19990:8080 \
+tomcat:7.0-jre8
