@@ -12,6 +12,6 @@ docker run \
 -p 19990:8080 \
 tomcat:7.0-jre8
 
-###start the agent on target machine###
+###start agent and http server on port 9998###
 
 java -jar $AGENT 9998 $AGENTCONF &
