@@ -1,3 +1,6 @@
+###tomcat7jre8 with jmx_exporter enironment variables set###
+###jmx not isolated###
+
 docker run \
 --name tommydev \
 -v /opt/test/agentconf.yml:/usr/local/tomcat/agentconf.yml \
@@ -8,3 +11,7 @@ docker run \
 -p 19998:9998 \
 -p 19990:8080 \
 tomcat:7.0-jre8
+
+###start the agent on target machine###
+
+java -jar $AGENT 9998 $AGENTCONF &
